@@ -1,1 +1,1 @@
-print("Nish")
+print (1000)
