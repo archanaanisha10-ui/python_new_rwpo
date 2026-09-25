@@ -1,0 +1,27 @@
+CSV 
+DAGA CSV OLDER OR FILE- daga.csv.U
+NONE
+PD - Python Developer
+FD -  FIXED DEPOSIT
+C++ - Programming Language
+
+time. sleep start time to end time with seconds
+
+CLASS AND OBJECT -this is template
+
+UML diagram - Unified Modeling Language (UML) Diagrams
+Last Updated :
+9 Sep, 2026
+Unified Modeling Language (UML) is a standardized visual modeling language used to visualize, design, and communicate the structure and behavior of a software system. UML is not a programming language.
+
+The International Organization for Standardization (ISO) published UML as an approved standard in 2005. UML has been revised over the years and is reviewed periodically.
+UML provides a common notation for communicating system design among stakeholders.
+Example: In an e-commerce system, a UML diagram can show components like User, Product, and Order, and how they interact during processes like placing an order.
+
+Need of UML
+
+class- KEY 
+ class Vehicle 
+
+
+
