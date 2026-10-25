@@ -1,0 +1,140 @@
+Section 1: Theory - 15 Questions
+
+1. What is Python, features?
+Python is a high-level, interpreted, easy-to-learn programming language. Guido van Rossum created it in 1991.
+Features: Easy syntax, Interpreted, Dynamically typed, Large library support, Open source, Platform independent.
+
+2. What is the difference between a list and a tuple?
+List: Defined with square brackets [], mutable (elements can be added, updated, or removed), slightly slower, and uses more memory.
+Tuple: Defined with parentheses (), immutable (cannot be modified after creation), faster, and hashable (usable as dictionary keys).
+
+3. What is the difference between = and == in Python?
+ = (Assignment Operator): Assigns a value or object reference to a variable (e.g., x = 5).
+ == (Equality Operator): Compares the values of two operands and returns True if equal, otherwise False (e.g., 5 == 5).
+
+4. What is the difference between for and while loops?
+for loop: Definite iteration; iterates through a known sequence or iterable (e.g., list, string, range()).
+while loop: Indefinite iteration; repeatedly executes a block as long as a specified condition remains True
+
+5. What is the difference between break, continue, and pass?
+break: Terminates the current loop entirely and transfers execution to the statement immediately following it.
+continue: Skips the rest of the current iteration and jumps to the next cycle of the loop.
+pass: A null statement that acts as a syntactic placeholder without performing any action.
+
+  6. What is a function, and how do you define it in Python?
+A function is a reusable, modular block of code designed to perform a specific task. It is defined using the def keyword followed by the function name, parameters, and a colon:
+def greet(name):
+    return f"Hello, {name}!"
+
+7. What is the difference between parameters and arguments?
+  Parameters: Variables listed inside the parentheses in a function's signature definition.
+  Arguments: The actual values or data passed into the function when invoking/calling it.
+
+ 8. What is the difference between print() and return?
+  print(): Displays data directly to standard output (console) for inspection. Its return value is always None.
+  return: Exits the function and passes a calculated value or object back to the caller to be used in expressions or stored in variables.
+
+9. What is type conversion? Explain implicit and explicit type conversion.
+Type conversion is transforming a value from one data type to another:
+ * Implicit Conversion: Automatically handled by the Python interpreter without data loss (e.g., adding int and float results in a float: 3 + 2.5 -> 5.5).
+ * Explicit Conversion (Type Casting): Manually performed by the programmer using built-in constructors (e.g., int("12"), str(45)).
+
+10. What is the difference between a set and a dictionary?
+ * Set: An unordered, unindexed collection of unique, mutable elements ({1, 2, 3}).
+ * Dictionary: An ordered (Python 3.7+) collection of key-value pairs ({"a": 1, "b": 2}) where keys must be unique and immutable.
+
+11. What are a class and an object in Python?
+ * Class: A user-defined blueprint or template defining the attributes (data) and methods (behavior) of an entity.
+ * Object: A concrete, instantiated instance of a class allocated in memory with its own state.
+
+ 12. What is inheritance? Explain its types.
+Inheritance is an OOP mechanism allowing a child (sub) class to acquire the properties and methods of a parent (super) class.
+ * Single: One child inherits from one parent.
+ * Multiple: One child inherits from multiple parent classes.
+ * Multilevel: A class derives from a child class (chain: A \rightarrow B \rightarrow C).
+ * Hierarchical: Multiple child classes inherit from a single parent.
+ * Hybrid: A combination of two or more inheritance types.
+
+ 13. What is a lambda function? Give its syntax.
+A lambda function is a small, anonymous inline function that can take any number of arguments but contains only a single expression whose evaluated result is automatically returned.
+Syntax:
+lambda arguments: expression
+ Example:
+square = lambda x: x ** 2
+
+14. What is file handling? Explain r, w, and a modes.
+File handling refers to reading, writing, and manipulating files stored on disk.
+ * 'r' (Read mode): Opens an existing file for reading. Raises FileNotFoundError if the file does not exist. Default mode.
+ * 'w' (Write mode): Opens a file for writing. Creates a new file if it does not exist; overwrites and truncates existing content.
+ * 'a' (Append mode): Opens a file for writing at the end of the file. Creates a new file if it does not exist; preserves existing content.
+
+ 15. What are Pandas? Explain Series and DataFrame.
+Pandas is a fast open-source library built on top of NumPy for structured data manipulation and analysis.
+ * Series: A 1D labeled array capable of holding any data type, with a single axis of row index labels.
+ * DataFrame: A 2D tabular data structure with heterogeneous, labeled axes (rows and columns), similar to an SQL table or spreadsheet.
+
+ Section 2: Coding / Problem-Solving Questions
+1. Check whether a given string is a palindrome
+def is_palindrome(text: str) -> bool:
+    cleaned = "".join(char.lower() for char in text if char.isalnum())
+    return cleaned == cleaned[::-1]
+
+# Example test:
+print(is_palindrome("Madam"))  # True
+print(is_palindrome("Python")) # False
+
+2. Find the greatest among four numbers
+def find_greatest(a: float, b: float, c: float, d: float) -> float:
+    # Direct conditional logic:
+    greatest = a
+    if b > greatest:
+        greatest = b
+    if c > greatest:
+        greatest = c
+    if d > greatest:
+        greatest = d
+    return greatest
+
+# Example test:
+print(find_greatest(12, 45, 7, 33))  # 45
+
+3. Print all even numbers between 1 and 100
+# Iterates through range(2, 101, 2)
+for num in range(2, 101, 2):
+    print(num, end=" ")
+print()
+
+4. Extract uppercase letters, lowercase letters, digits, and special characters
+def separate_characters(s: str) -> tuple[str, str, str, str]:
+    uppercase = []
+    lowercase = []
+    digits = []
+    special = []
+
+    for char in s:
+        if char.isupper():
+            uppercase.append(char)
+        elif char.islower():
+            lowercase.append(char)
+        elif char.isdigit():
+            digits.append(char)
+        else:
+            special.append(char)
+
+    return "".join(uppercase), "".join(lowercase), "".join(digits), "".join(special)
+
+# Example test:
+u, l, d, sp = separate_characters("Hello@World123!")
+print("Uppercase:", u)  # HW
+print("Lowercase:", l)  # elloorld
+print("Digits:   ", d)  # 123
+print("Special:  ", sp) # @!
+
+5. Check whether a given integer is even or odd
+def check_even_odd(n: int) -> str:
+    return "Even" if n % 2 == 0 else "Odd"
+
+# Example test:
+print(check_even_odd(42)) # Even
+print(check_even_odd(17)) # Odd
+
